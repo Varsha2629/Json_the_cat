@@ -2,8 +2,8 @@ const { fetchBreedDescription } = require('../breedFetcher');
 const { assert } = require('chai');
 
 describe('fetchBreedDescription', () => {
-  xit('returns a string description for a valid breed, via callback', (done) => {
-    fetchBreedDescription('Siberian', (desc, err) => {
+  it('returns a string description for a valid breed, via callback', (done) => {
+    fetchBreedDescription('Siberian', (err, desc) => {
       // we expect no error for this scenario
       assert.isNull(err);
 
@@ -17,7 +17,7 @@ describe('fetchBreedDescription', () => {
   });
 
  it('return the error where an invalid/non-existent breed is passed', (done) => {
-    fetchBreedDescription('Varsha', (desc, err) => {
+    fetchBreedDescription('Varsha', (err, desc) => {
       // we expect no error for this scenario
       assert.isNotNull(err);
 
